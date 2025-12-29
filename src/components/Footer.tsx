@@ -2,10 +2,10 @@ import { Instagram, Twitter, Linkedin, Dribbble } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/mickael.naldy", label: "Instagram" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Dribbble, href: "#", label: "Dribbble" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/mickaelrenaldy", label: "LinkedIn" },
+    // { icon: Dribbble, href: "#", label: "Dribbble" },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <a href="#" className="font-display text-xl font-bold text-heading">
-            Studio<span className="text-primary">.</span>
+            Renaldy<span className="text-primary">.</span>
           </a>
 
           {/* Social Links */}
@@ -33,7 +33,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 Studio. All rights reserved.
+            © 2025 Renaldy. All rights reserved.
           </p>
         </div>
       </div>

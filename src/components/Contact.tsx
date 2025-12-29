@@ -38,9 +38,9 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="grid sm:grid-cols-3 gap-8 pt-12 border-t border-border">
             {[
-              { icon: Mail, label: "Email", value: "hello@studio.co" },
-              { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-              { icon: MapPin, label: "Location", value: "San Francisco, CA" },
+              { icon: Mail, label: "Email", value: "mickaelg566@gmail.com" },
+              { icon: Phone, label: "Phone", value: "089524309404" },
+              { icon: MapPin, label: "Location", value: "Surabaya, Indonesia" },
             ].map((item) => (
               <div key={item.label} className="text-center group cursor-pointer">
                 <div className="w-12 h-12 rounded-xl bg-secondary mx-auto mb-4 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">

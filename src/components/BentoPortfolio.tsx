@@ -1,5 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PortfolioItem {
   id: number;
@@ -59,35 +60,48 @@ const PortfolioCard = ({ item, index }: { item: PortfolioItem; index: number }) 
 
   return (
     <div
-      ref={ref}
-      className={`${item.span} group relative overflow-hidden rounded-2xl bg-card cursor-pointer transition-all duration-500 ${
+      ref={ref} // Ref tetap di div, aman bagi TypeScript
+      className={`${item.span} transition-all duration-500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="absolute inset-0">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-heading/80 via-heading/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-      </div>
+      <Link
+        to="/work"
+        className="group relative block h-full w-full overflow-hidden rounded-2xl bg-card cursor-pointer"
+      >
+        <div
+          ref={ref}
+          className={`${item.span} group relative overflow-hidden rounded-2xl bg-card cursor-pointer transition-all duration-500 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}
+          style={{ transitionDelay: `${index * 100}ms` }}
+        >
+          <div className="absolute inset-0">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-heading/80 via-heading/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+          </div>
 
-      <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 flex flex-col justify-end">
-        <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-          <span className="inline-block px-3 py-1 mb-3 text-xs font-medium tracking-wider uppercase bg-background/20 backdrop-blur-sm rounded-full text-background/90">
-            {item.category}
-          </span>
-          <h3 className="text-xl md:text-2xl font-display font-semibold text-background mb-2">
-            {item.title}
-          </h3>
-        </div>
+          <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 flex flex-col justify-end">
+            <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+              <span className="inline-block px-3 py-1 mb-3 text-xs font-medium tracking-wider uppercase bg-background/20 backdrop-blur-sm rounded-full text-background/90">
+                {item.category}
+              </span>
+              <h3 className="text-xl md:text-2xl font-display font-semibold text-background mb-2">
+                {item.title}
+              </h3>
+            </div>
 
-        <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-          <ArrowUpRight className="w-5 h-5 text-background" />
+            <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <ArrowUpRight className="w-5 h-5 text-background" />
+            </div>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
