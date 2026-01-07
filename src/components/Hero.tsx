@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { ref: headingRef, isVisible: headingVisible } = useScrollAnimation();
@@ -24,12 +25,12 @@ const Hero = () => {
             }`}
           >
             <span className="inline-block mb-6 px-4 py-2 bg-secondary rounded-full text-sm font-medium text-muted-foreground">
-              Creative Studio
+              Portfolio Project
             </span>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight text-heading leading-[0.9] mb-8">
-              We craft digital
+              Hi i'm
               <br />
-              <span className="text-primary">experiences</span>
+              <span className="text-primary">Mickael Renaldy</span>
             </h1>
           </div>
 
@@ -49,9 +50,11 @@ const Hero = () => {
               ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <Button variant="hero" size="xl">
-              View Our Work
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button variant="hero" size="xl" asChild>
+              <Link to="/work">
+                View Our Work
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
             <Button variant="hero-outline" size="xl">
               Get in Touch
